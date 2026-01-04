@@ -12,7 +12,22 @@ Things/ Topic we covered so far:
  2. Installed VS code
  3. Git and Github account to learn version control
  4. Create porject folder/ repository
- 5. 
+ 5. Create a git hub repo
+ 6. console log to print
+ 7. variables: 
+    1. let, const, var
+    2. primitive datatypes:  string, num, boolean, undefined, null, symbol, bigint
+    3. object : yet ot cover
+8. Varible naming practice camel case and readbility rules
+9. Variable declaration and modification and reusablity
+10. function
+11 Loops
+    1. IF else
+    2. for
+    3. with
+
+
+
  
 notes and key word deinition
  Git: Version control system
@@ -37,3 +52,26 @@ writing program is doing a communication.
  Status Codes in API testing error codes201, 299 400, 401, 404, 500 ..
 
  for interview questions normally we need for loop and array to work together.
+
+#Chapter Variable:
+##naming convention for variable
+1. cannot start with number
+2. cannot have spaces
+3. cannot use special characters except _ and $
+4. cannot use reserved keywords like let, var , if , else , for , function etc
+5. use camelCase for multiple words like firstName , lastName , searchBoxLocator
+6. variable names are case sensitive firstname and Firstname are different variables
+7. use meaningful names for variables like firstName is better than fn or name1
+8. avoid single letter variable names except for counters like i , j in loops
+9. use lowercase for single word variables like email , age , country
+10. avoid using underscores in variable names except for constants like MAX_VALUE , MIN_VALUE
+11. use const for variables which value will not change
+12. snake_case is not preferred in javascript but if used then use lowercase like first_name , last_name
+
+#Mistakes to avoid
+1. don't use var, prefer let and const
+2. don't use before declaring variable
+3.  don't use Quotes around variable names
+4. don't declare variable multiple times with let
+
+Summary : variables are used to store data for reusability and better code management

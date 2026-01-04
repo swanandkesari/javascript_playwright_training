@@ -76,10 +76,10 @@ const PI = 3.14; // constant variable
 console.log(PI);
 // PI = 3.14159; // this will give error as we cannot reassign value to constant variable
 
-var name = "John"; // old way of declaring variable
-console.log(name);
-name = "Doe"; // reassigning value
-console.log(name);
+var FirstName = "John"; // old way of declaring variable
+console.log(FirstName);
+FirstName = "Doe"; // reassigning value
+console.log(FirstName);
 // var allows redeclaration but it is not a good practice to use var
 // prefer let and const over var
 
