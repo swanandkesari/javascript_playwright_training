@@ -21,10 +21,11 @@ console.log("Converted Number Value: " + numValue + " , Data Type: " + typeof nu
 
 // Summary : unary operators are used to perform operations on single operand and can be used for increment, decrement and type conversion
 
-//== vs ===
+//= Vs == vs ===
 let numberOfApples = 5; // number data type
 let stringOfApples = "5"; // string data type
 
 console.log("Using == operator: " + (numberOfApples == stringOfApples)); // true as values are equal after type coercion
 console.log("Using === operator: " + (numberOfApples === stringOfApples)); // false as data types are different
+// just = is assignment operator not comparison operator.
 // Summary : use === for strict comparison to avoid unexpected bugs due to type coercion

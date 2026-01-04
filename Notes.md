@@ -21,7 +21,7 @@ Things/ Topic we covered so far:
 8. Varible naming practice camel case and readbility rules
 9. Variable declaration and modification and reusablity
 10. function
-11 Loops
+11. Loops
     1. IF else
     2. for
     3. with
