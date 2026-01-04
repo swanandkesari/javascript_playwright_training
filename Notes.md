@@ -26,7 +26,9 @@ Things/ Topic we covered so far:
     2. for
     3. with
 
-
+//settings can be found at:
+@id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled 
+keep Auto complete OFF for bettet Practice
 
  
 notes and key word deinition
