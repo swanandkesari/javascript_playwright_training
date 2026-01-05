@@ -28,21 +28,19 @@ Topics covered so far
     - while
 
 Settings (to disable autocomplete for practice)
-
-@id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled
+    @id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled
 
 Keep autocomplete OFF for better practice when learning.
 
-Notes and key definitions
+# Notes and key definitions
 
 - Git: version control system.
 - GitHub: hosting/service for repositories, issues, PRs, reviews, and CI integrations.
-- Variables: used to store data in memory (a single container).
-  - Why use variables? To reuse values in multiple places and change them in one place — improves reusability and maintainability.
 
-Without variables, you would need to type values (e.g., an email ID) multiple times and update everywhere when it changes. That makes maintenance hard.
 
-Quotes and learning statements
+
+
+# Quotes and learning statements
 
 - The expert in anything was once a beginner.
 - Reusability and maintainability are essential.
@@ -55,8 +53,12 @@ Status codes in API testing (common examples): 200, 201, 299, 400, 401, 404, 500
 For interview questions, you often need loops and arrays together.
 
 # Chapter: Variables
-
-    Naming conventions
+- Variables: used to store data in memory (a single container).
+    - Why use variables?
+        - To reuse values in multiple places and change them in one place — improves reusability and maintainability.
+        - example:
+        Without variables, you would need to type values (e.g., an email ID) multiple times and update everywhere when it changes. That makes maintenance hard.
+    - Naming conventions
         1. Cannot start with a number.
         2. Cannot have spaces.
         3. Cannot use special characters except `_` and `$`.
@@ -70,32 +72,30 @@ For interview questions, you often need loops and arrays together.
         11. Use `const` for variables whose values will not change.
         12. `snake_case` is not preferred in JavaScript but, if used, use lowercase (e.g., `first_name`).
 
-    Mistakes to avoid
+    - Mistakes to avoid
         1. Don't use `var`; prefer `let` and `const` (var is function-scoped and can cause bugs).
         2. Don't use a variable before declaring it.
         3. Don't put quotes around variable names — that makes them strings.
         4. Don't declare the same variable multiple times with `let` (it causes an error).
     
-    Summary: variables store data for reusability and better code management.
+    - Summary: variables store data for reusability and better code management.
 
-    Points to remember
+    - Points to remember
         - Scope is within the curly braces of a block.
         - When declared with `let` inside a block (function, loop, if/else), it remains only in that block.
         - JavaScript is dynamically typed — a variable's data type can change at runtime.
 
-    Data types
-- Primitive: string, number, boolean, undefined, null, symbol, bigint
-- Non-primitive: object, array, function
-- In JavaScript, many things are objects except primitive values.
-- Data types matter for correct operations and clearer code.
-  - Example: arithmetic on strings results in concatenation.
-
-QA domain examples
-
-- string: username, password, validation messages
-- number: test case id, execution time, counts
-
-Operators
+    - Data types
+        - Primitive: string, number, boolean, undefined, null, symbol, bigint
+        - Non-primitive: object, array, function
+        - In JavaScript, many things are objects except primitive values.
+        - Data types matter for correct operations and clearer code.
+          - Example: arithmetic on strings results in concatenation.
+        - QA domain examples
+            -  string: username, password, validation messages
+            - number: test case id, execution time, counts
+    
+    - Operators
 
 - Operators can behave differently based on data types.
 - Use explicit type conversion when needed.

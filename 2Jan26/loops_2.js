@@ -36,11 +36,13 @@ for (let i = 0; i < testcaseNames.length; i++) { //while using for loop always u
 
 }
 
-
+//Similar to foreach in java.. 
+// this is teh best practice
+//cleaner way
 for (let testName of testcaseNames) { // for...of loop to iterate over array elements directly
     console.log(`Executing Test Case: ${testName}`);
 }
-
+// only when we need a position of the element then only we go for conventional for loop with iterator 
 // another example of for...of loop with strings
 let environment = "staging";
 for (let char of environment) {
