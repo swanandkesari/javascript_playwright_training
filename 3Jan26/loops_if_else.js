@@ -49,3 +49,37 @@ if (length > 3) {
 if (length > 5) {// add else if or nested if to avoid independent evaluation
     console.log("Length is greater than 5");
 }
+
+let emptyStr = ""
+let emptySapceStr = " "
+let randomNumber = 23
+let zero = 0
+let negativeNumber = -5
+if (emptyStr) {
+    console.log(` String "${emptyStr}" gives result true`)
+}
+else {
+    console.log(` String "${emptyStr}" considered as False, since it is Empty`)
+}
+if (emptySapceStr) {
+    console.log(` String "${emptySapceStr}" gives result true`)
+}
+else {
+    console.log(` String "${emptySapceStr}" considered as False, space is ignored. :O NOt expected`)
+}
+if (randomNumber) {
+    console.log(` Number "${emptyStr}" gives result true indicating it is not null and variable exist`)
+}
+if (zero) {
+    console.log(` Number "${zero}" gives result true indicating it is not null and variable exist`)
+}
+else {
+    console.log(` Number "${zero}" gives result false indicating it is null or value is zero`)
+}
+//truthy and falsy values
+//empty string, zero number, null, undefined are considered as falsey values
+// nonzero numbers, non empty string are  true values
+
+// practical QA domain example:
+//unnamed test name
+// let testName ="" is unnamed.. 
