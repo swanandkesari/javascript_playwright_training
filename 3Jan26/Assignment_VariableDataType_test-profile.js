@@ -1,6 +1,6 @@
 // we are styudying varibles using testcase example:
 /*
-Task:
+Assignment:
 Create a fole with AppNmae, FirstNme. email andage and Active
 Role
 create atleast 8 different variables using let and const

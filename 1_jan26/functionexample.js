@@ -3,8 +3,18 @@ function hellouser(name) {
 }
 hellouser("Alice");
 
-//If value of b is provided use it otherwise use 0
-// this is called default parameter
+function hello() {
+    console.log("hello!");
+}
+
+hello(hello())// even when syntax is wrong or hellow doesnot expect any input it runs hello twice and print hello! twice.. this is incorrect.
+
+
+// Function is a block of code that can be reused////
+// to make code readable, maintainable
+// when we drive a car, do we need to know how engine works? no similarly we need not know all is implemented by external function
+// not DRY:  Donot Repeat Yourself.
+// Function can have input parameter and return will output the results of operations but both are optional
 //It is ok to call function and define later
 // hoisting allows this
 //hoisting will move function declaration to top makes it available before its actual declaration
@@ -13,8 +23,11 @@ hellouser("Alice");
 // function expressions are not hoisted
 // console.log(sum(5)) // will give error if uncommented as sum is not hoisted
 // console.log(sum(5, 10)) // will give error if uncommented as sum is not hoisted
-sum(5, 10)
+
+sum(5, 10) //hoisting example calling a function before defining.
 function sum(a, b = 0) {
+    //If value of b is provided use it otherwise use 0
+    // this is called default parameter
     console.log("Calculating the sum of " + a + " and " + b)
     let c = a + b
     return c
@@ -22,7 +35,7 @@ function sum(a, b = 0) {
 
 
 
-console.log(sum(5))
+console.log(sum(5)) //Sum function's return will be taken as inut to Log function.
 console.log(sum(5, 10))
 
 

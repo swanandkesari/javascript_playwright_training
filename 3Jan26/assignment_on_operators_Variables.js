@@ -29,6 +29,7 @@ console.log(logLine);
 console.log("Test Count: " + testCount);
 console.log("Passed Tests: " + passTest);
 console.log("Failed Tests: " + failedTest);
+console.log("Passing rate: " + (passTest / testCount * 100) + " %"); //bracket helps to avoid converting the variable to string
 console.log("Test Case Description: " + testCaseDescription);
 console.log("Status: " + isTestCasePassed);
 console.log(logLine);
