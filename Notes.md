@@ -1,126 +1,149 @@
- Node.JS-Run our Programs
+Node.js — Run our programs
 
- IDE: Interactive Developemen environment: We are sing VS code
+IDE: Interactive Development Environment: we are using VS Code
 
- Git
-#interesting Fact
- JS  was created to transform static HTML pages to dynamic by 
+Git
 
-Things/ Topic we covered so far:
+Interesting fact
+JavaScript was created to transform static HTML pages into dynamic ones.
 
- 1. Installed NodeJs
- 2. Installed VS code
- 3. Git and Github account to learn version control
- 4. Create porject folder/ repository
- 5. Create a git hub repo
- 6. console log to print
- 7. variables: 
-    1. let, const, var
-    2. primitive datatypes:  string, num, boolean, undefined, null, symbol, bigint
-    3. object : yet ot cover
-8. Varible naming practice camel case and readbility rules
-9. Variable declaration and modification and reusablity
-10. function
+Topics covered so far
+
+1. Installed Node.js
+2. Installed VS Code
+3. Git and GitHub accounts to learn version control
+4. Created a project folder / repository
+5. Created a GitHub repo
+6. `console.log()` to print output
+7. Variables
+   - `let`, `const`, `var`
+   - Primitive data types: string, number, boolean, undefined, null, symbol, bigint
+   - Object: (to be covered)
+8. Variable naming practice (camelCase and readability rules)
+9. Variable declaration, modification, and reusability
+10. Functions
 11. Loops
-    1. IF else
-    2. for
-    3. with
+    - if / else
+    - for
+    - while
 
-//settings can be found at:
-@id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled 
-keep Auto complete OFF for bettet Practice
+Settings (to disable autocomplete for practice)
 
- 
-notes and key word deinition
- Git: Version control system
- github : service to provide  Storage, log issues, versions, reviews and many other features
- Variables: used to store the data in memory single container..
-    why?  to access? yes but +
-         to use at multiple location
-         cahnge it at one place use teh same change everywhere: testcase is using email ID and change email ID once and use the same everywhere
-         Reusability and maintainabilty
+@id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled
 
-without ariable we need to type email iD multiple time and need a change every where thus maintainability is difficult and reusing is lost.
+Keep autocomplete OFF for better practice when learning.
 
+Notes and key definitions
+
+- Git: version control system.
+- GitHub: hosting/service for repositories, issues, PRs, reviews, and CI integrations.
+- Variables: used to store data in memory (a single container).
+  - Why use variables? To reuse values in multiple places and change them in one place — improves reusability and maintainability.
+
+Without variables, you would need to type values (e.g., an email ID) multiple times and update everywhere when it changes. That makes maintenance hard.
 
 Quotes and learning statements
-The expert in anthing was once a beginner
-Reusability and maintainbility is must
-If you need to copy past code something is wrong as it will take more to maintain
-writing program is doing a communication.
-Use functions to help you to not DRY meaning you do not repeat yourself
-    Donot repeat code in multiple places use functions instead
- Status Codes in API testing error codes201, 299 400, 401, 404, 500 ..
 
- for interview questions normally we need for loop and array to work together.
+- The expert in anything was once a beginner.
+- Reusability and maintainability are essential.
+- If you need to copy-paste code, something is wrong — it will be harder to maintain.
+- Writing a program is communication.
+- Use functions to follow the DRY (Don't Repeat Yourself) principle.
 
-# Chapter Variable:
-    ## naming convention for variable
-        1. cannot start with number
-        2. cannot have spaces
-        3. cannot use special characters except _ and $
-        4. cannot use reserved keywords like let, var , if , else , for , function etc
-        5. use camelCase for multiple words like firstName , lastName , searchBoxLocator
-        6. variable names are case sensitive firstname and Firstname are different variables
-        7. use meaningful names for variables like firstName is better than fn or name1
-        8. avoid single letter variable names except for counters like i , j in loops
-        9. use lowercase for single word variables like email , age , country
-        10. avoid using underscores in variable names except for constants like MAX_VALUE , MIN_VALUE
-        11. use const for variables which value will not change
-        12. snake_case is not preferred in javascript but if used then use lowercase like first_name , last_name
+Status codes in API testing (common examples): 200, 201, 299, 400, 401, 404, 500
 
-    ## Mistakes to avoid
-        1. don't use var, prefer let and const
-            why? var is not scoped inside a code block, it becomes global.
-        2. don't use before declaring variable
-        3. don't use Quotes around variable names. why?  using quotes will consider that as a string instead of variable name.
-        4. don't declare variable multiple times with let. compilation error. but need to define /declare first time with let.
-    Summary : variables are used to store data for reusability and better code management
-    ## points to remember
-        scope of variable is withing the curly braces of code block, 
-        when declared with let in a block or function, loop, if else conditions it will remain only in that block.
-        javascript is dynamically typed language means data type of variable can change during runtime
+For interview questions, you often need loops and arrays together.
 
-    ## Data types
-        . Primitive data types: string, number, boolean, undefined, null, symbol, bigint
-        . Non-primitive data types: object, array, function
-        . cool fact : in javascript everything is object except primitive data types
-        . JavaScript is dynamically typed language means we don't need to specify data type while declaring variable
-        . Data types are important for correct operations and better code management
-        . for example if we try to perform arithmetic operation on string data type it will result in concatenation instead of addition
-            . Salary example taken and value provided with string.
-        ### QA DOmainTesting example
-            .  string data type for username, password test name
-                URS and validation messages
-            . number data type for test case id, execution time, count of tests
-                decimal values, an mathematical calculations
+# Chapter: Variables
 
-    ## Operators
-     . operators can behave differently based on data types
-     . javascript is dynamically typed language means data type of variable can change during runtime
-     . we can use type conversion methods to convert data types explicitly
-     ### unary operators
-        . count += 5; //similar to count = count + 5// compound assignment operator
-        . ++count // increment first then use
-        . count++ // use first then increment
-        . unary operators are used to perform operations on single operand and can be used for increment, decrement and type conversion
-     ### Comparison Operators in JavaScript
-        . Equality Operators
-            . = -> Assignment 
-            . == ->  compare value but not data type.  5 == "5" returns true
-            . === -> compare value and data type strict.  5 === "5" returns false
-        . Relational Operators : <, >, =<, => : uesd in if else conditional fomating
-        . logic operators:
-             &&-> and
-             ||-> or
-             !-> not
+    Naming conventions
+        1. Cannot start with a number.
+        2. Cannot have spaces.
+        3. Cannot use special characters except `_` and `$`.
+        4. Cannot use reserved keywords like `let`, `var`, `if`, `else`, `for`, `function`, etc.
+        5. Use camelCase for multiple words (e.g., `firstName`, `lastName`, `searchBoxLocator`).
+        6. Variable names are case sensitive (`firstname` and `FirstName` are different).
+        7. Use meaningful names (e.g., `firstName` better than `fn` or `name1`).
+        8. Avoid single-letter names except for counters like `i`, `j` in loops.
+        9. Use lowercase for single-word variables like `email`, `age`, `country`.
+        10. Avoid using underscores in variable names except for constants like `MAX_VALUE`.
+        11. Use `const` for variables whose values will not change.
+        12. `snake_case` is not preferred in JavaScript but, if used, use lowercase (e.g., `first_name`).
+
+    Mistakes to avoid
+        1. Don't use `var`; prefer `let` and `const` (var is function-scoped and can cause bugs).
+        2. Don't use a variable before declaring it.
+        3. Don't put quotes around variable names — that makes them strings.
+        4. Don't declare the same variable multiple times with `let` (it causes an error).
+    
+    Summary: variables store data for reusability and better code management.
+
+    Points to remember
+        - Scope is within the curly braces of a block.
+        - When declared with `let` inside a block (function, loop, if/else), it remains only in that block.
+        - JavaScript is dynamically typed — a variable's data type can change at runtime.
+
+    Data types
+- Primitive: string, number, boolean, undefined, null, symbol, bigint
+- Non-primitive: object, array, function
+- In JavaScript, many things are objects except primitive values.
+- Data types matter for correct operations and clearer code.
+  - Example: arithmetic on strings results in concatenation.
+
+QA domain examples
+
+- string: username, password, validation messages
+- number: test case id, execution time, counts
+
+Operators
+
+- Operators can behave differently based on data types.
+- Use explicit type conversion when needed.
+
+Unary and compound operators
+
+- `count += 5` (compound assignment)
+- `++count` (increment then use)
+- `count++` (use then increment)
+
+Comparison operators
+
+- `=` -> assignment
+- `==` -> compares value only (e.g., `5 == "5"` is true)
+- `===` -> compares value and type (e.g., `5 === "5"` is false)
+- Relational: `<`, `>`, `<=`, `>=`
+- Logical: `&&` (and), `||` (or), `!` (not)
+
+Chapter: Loops
+
+IF / Else
+
+- `if` / `else` statements perform conditional operations.
+- Multiple `else if` clauses are allowed; only one `else` block is allowed at the end.
+- Only the first true condition executes; order matters.
+- Use `{}` for blocks — even for single statements it's clearer to include them.
+- Nested `if` / `else` is allowed for complex logic.
+
+Truthy and falsy values
+
+- Falsy: `""` (empty string), `0`, `null`, `undefined`, `NaN`, `false`
+- Truthy: non-zero numbers, non-empty strings, objects, arrays
+
+Practical examples / assignments
+
+- Grading system
+- Email validation
+- Username & password validation
+
+Switch case
+
+- Use `switch` for multiple discrete values; include `break` to prevent fall-through.
+
+For loop
+
+- (Add example snippets here as practice.)
 
 
 
 
-
-# Chapter Loops
-    ## IF Else
-        if-else statements are used to perform conditional operations based on certain conditions
-        for example in QA domain we check if test is passed or failed or skipped based on certain conditions
 
