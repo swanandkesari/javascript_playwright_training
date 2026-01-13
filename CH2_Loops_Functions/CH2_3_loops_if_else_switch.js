@@ -1,3 +1,4 @@
+//If loop example.
 testResult = 'Passed';
 
 if (testResult === 'Passed') {
@@ -10,6 +11,8 @@ if (testResult === 'Passed') {
     console.log('Unknown test result');
 }
 
+
+// Use of Switch case instead of if Else for better readalbility.
 switch (testResult) {
     case 'Passed':
         console.log('Test succeeded');

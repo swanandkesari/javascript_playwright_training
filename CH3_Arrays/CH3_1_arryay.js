@@ -15,3 +15,8 @@ console.log(`Mixed Array Elements: ${mixedArray}`);
 //index out of bounds
 console.log(`Accessing out of bounds index: ${testcaseNames[10]}`); // prints undefined
 
+//next array
+//objects
+//error handleing
+// async programming
+// playwright next week
