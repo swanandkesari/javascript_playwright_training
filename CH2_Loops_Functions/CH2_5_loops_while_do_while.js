@@ -29,7 +29,7 @@ while (!success && attempts < maxAttempt) {
 //do while attempts first anyways so it runs first try always
 //while checlk conditions
 
-// we need to exit some menue
+// we need to exit some menu
 
 
 // normally while should always be preferred over do while
@@ -44,7 +44,7 @@ while (!success && attempts < maxAttempt) {
 //
 
 // mistakes
-// index out of bout
+// index out of bound
 // for(i=0; i<= array.length;i++)... <= will try to reach extra element which is not there..
 //infinite loops..
 //for(i=1; i<= array.length;i++).. // we miss array[0] first value of the array

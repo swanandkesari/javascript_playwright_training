@@ -37,7 +37,7 @@ for (let i = 0; i < testcaseNames.length; i++) { //while using for loop always u
 }
 
 //Similar to foreach in java.. 
-// this is teh best practice
+// this is the best practice
 //cleaner way
 for (let testName of testcaseNames) { // for...of loop to iterate over array elements directly
     console.log(`Executing Test Case: ${testName}`);

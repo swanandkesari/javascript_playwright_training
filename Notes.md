@@ -1,13 +1,10 @@
-Node.js — Run our programs
+# Tools we are using:
+- Node.js — Run our programs
+- IDE: Interactive Development Environment: we are using VS Code
+- Version Control: Git and GitHub
 
-IDE: Interactive Development Environment: we are using VS Code
 
-Git
-
-Interesting fact
-JavaScript was created to transform static HTML pages into dynamic ones.
-
-Topics covered so far
+# Topics covered so far
 
 1. Installed Node.js
 2. Installed VS Code
@@ -15,30 +12,53 @@ Topics covered so far
 4. Created a project folder / repository
 5. Created a GitHub repo
 6. `console.log()` to print output
-7. Variables
-   - `let`, `const`, `var`
-   - Primitive data types: string, number, boolean, undefined, null, symbol, bigint
-   - Object: (to be covered)
-8. Variable naming practice (camelCase and readability rules)
-9. Variable declaration, modification, and reusability
-10. Functions
-11. Loops
+7. Variables: (CH1 _in our coding practice)
+    - General:
+        -  `var`, `let`, `const`
+        - `let`, `const`, `var`
+        - Primitive data types: string, number, boolean, undefined, null, symbol, bigint
+        - Object: (to be covered)
+    - Variable naming practice (camelCase and readability rules)
+    - Variable declaration, modification, and reusability
+    - Operators:
+        -  Unary and compound operators
+        - Comparison operators
+8. Functions
+    - What? Why? DRY 
+    - Syntax
+    - hoisting
+    - function as expression
+    - function as parameter for another function
+    - default parameter
+    - anonymous function
+    - String functions
+        - toUppercase, toLowerCase, slice, includes, startsWith, endsWith, trim, trimStart, trimEnd
+        - Template literals
+9. Loops
     - if / else
+    - Switch case
     - for
+        - traditional for
+        - for of
+        - for each later in arrays / objects
+        - mistakes to avoid
     - while
+        - condition
+        - do while
+        - mistakes to avoid
+10. CH3 array
 
-Settings (to disable autocomplete for practice)
-    @id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled
-
-Keep autocomplete OFF for better practice when learning.
 
 # Notes and key definitions
+- Definitions:
+    - Git: version control system.
+    - GitHub: hosting/service for repositories, issues, PRs, reviews, and CI integrations.
+    - IDE: Interactive Development Environment: more than text editor. we are using VS code as IDE.
 
-- Git: version control system.
-- GitHub: hosting/service for repositories, issues, PRs, reviews, and CI integrations.
-
-
-
+    - Hoisting will move all defintion at the top. This allows to call function anywhere even before defining.
+    - Default parameter of function: if teh default value of teh input parameter of the function is provided it is called as default parameter.
+    - iterate: for a set of values we iterate meaning we use each value to do same operation one at a time using some sequence and loop.
+    
 
 # Quotes and learning statements
 
@@ -48,9 +68,16 @@ Keep autocomplete OFF for better practice when learning.
 - Writing a program is communication.
 - Use functions to follow the DRY (Don't Repeat Yourself) principle.
 
-Status codes in API testing (common examples): 200, 201, 299, 400, 401, 404, 500
+# Random notes during class
+- notes dump
+    - Status codes in API testing (common examples): 200, 201, 299, 400, 401, 404, 500
+    - For interview questions, you often need loops and arrays together.
+    - Keep autocomplete OFF for better practice when learning.
+        -  Settings (to disable autocomplete for practice)
+            @id:editor.quickSuggestions @id:editor.suggestOnTriggerCharacters @id:editor.wordBasedSuggestions @id:editor.tabCompletion @id:javascript.suggest.enabled @id:typescript.suggest.enabled
+- Interesting fact
+    - JavaScript was created to transform static HTML pages into dynamic ones.
 
-For interview questions, you often need loops and arrays together.
 
 # Chapter: Variables
 - Variables: used to store data in memory (a single container).
@@ -96,52 +123,141 @@ For interview questions, you often need loops and arrays together.
             - number: test case id, execution time, counts
     
     - Operators
+        - Operators can behave differently based on data types.
+        - Use explicit type conversion when needed.
 
-- Operators can behave differently based on data types.
-- Use explicit type conversion when needed.
+        -  Unary and compound operators
+            - `count += 5` (compound assignment)
+            - `++count` (increment then use)
+            - `count++` (use then increment)
 
-Unary and compound operators
+        - Comparison operators
+            - `=` -> assignment
+            - `==` -> compares value only (e.g., `5 == "5"` is true)
+            - `===` -> compares value and type (e.g., `5 === "5"` is false)
+            - Relational: `<`, `>`, `<=`, `>=`
+            - Logical: `&&` (and), `||` (or), `!` (not)
 
-- `count += 5` (compound assignment)
-- `++count` (increment then use)
-- `count++` (use then increment)
+# Chapter: Functions and Loops
+- Functions
+    - What? ->  Function is a block of code that can be reused
+    - Why?  ->  Advantage: make code readable, maintainable, and reusable
+    - Philosophical Example: when we drive a car, do we need to know how engine works?
+       no! Similarly, we need not know all is implemented by external function! but we can still use it.
+    - DRY:  Donot Repeat Yourself. (Coding principle will go in Quotes and Learning Statements)
+    - Function can have input parameter and return will output the results of operations but both are optional.
+    - Syntax: function <name>(<input parameters>) {<actual code>; <optional return statement>}
+    - It is ok to call function and define later
+    - Hoisting will move all defintion at the top. This allows to call function anywhere even before defining.
+    - Functions can be convered into expressions and stored in variables
+    - expressions are not hoisted
+        - Thus function expressions are also no hoisted
+        - Hence, both function expressions and expressions should be defined before calling.
+        - example: // console.log(sum(5,10)) // will give error if uncommented as sum is not hoisted and sum() is not defined before calling.
+            - here sum(5,10) function is treated as expression
+    - Default parameter:
+        - function sum(a, b = 0) { return a+b}
+        - If value of b is provided use it otherwise use 0. Here B is called default parameter
+    - functions can be passed as a parameter to another function.
+    - function can be anonymous:
+    - example:
+    - function that validated email using multiple validators:
+        -   each validator is a function that returns true or false
+        - every validator is stored in an array
+        - every validator function is without name that is anonymous function allowed in js
+        - const emailValidator = [
+            function (val) { return val.includes("@") },
+            function (val) { return val.includes(".") },
+            function (val) { return val.length > 5 }
+            ];
+    - String functions:
+        - Strings are commonly used in functions and programming.
+        -  Template terminals:
+            - To use templateliterals use backticks ``
+            - To use variables inside template literals use ${variableName}
+            - Template literals are preferable over concatenation for better readability
+        - String default methods:
+            - toUpperCase(),
+            - toLowerCase(),
+            - slice()
+            - not frequently used:
+                - trim(),
+                - trimStart(),
+                - trimEnd(),
 
-Comparison operators
+- If / Else
 
-- `=` -> assignment
-- `==` -> compares value only (e.g., `5 == "5"` is true)
-- `===` -> compares value and type (e.g., `5 === "5"` is false)
-- Relational: `<`, `>`, `<=`, `>=`
-- Logical: `&&` (and), `||` (or), `!` (not)
+    - `if` / `else` statements perform conditional operations.
+    - Multiple `else if` clauses are allowed; only one `else` block is allowed at the end.
+    - Only the first true condition executes; order matters.
+    - Use `{}` for blocks — even for single statements it's clearer to include them.
+    - Nested `if` / `else` is allowed for complex logic.
 
-Chapter: Loops
+    - Truthy and falsy values
+        - Falsy: `""` (empty string), `0`, `null`, `undefined`, `NaN`, `false`
+        - Truthy: non-zero numbers, non-empty strings, objects, arrays
 
-IF / Else
+    - Practical examples / assignments
+        - Grading system
+        - Email validation
+        - Username & password validation
 
-- `if` / `else` statements perform conditional operations.
-- Multiple `else if` clauses are allowed; only one `else` block is allowed at the end.
-- Only the first true condition executes; order matters.
-- Use `{}` for blocks — even for single statements it's clearer to include them.
-- Nested `if` / `else` is allowed for complex logic.
+- Switch case
+    - Use `switch` for multiple discrete values; include `break` to prevent fall-through.
 
-Truthy and falsy values
+- For loop
+    - Traditional for loop:
+    - The for loop consists of three main parts and body:
+        1. Initialization: let i = 0; // initializes the loop counter variable i to 0
+        2. Condition: i < 5; // checks if the loop should continue running (as long as i is less than 5)
+        3. Increment: i++; // increments the counter variable i by 1 after each iteration
+        4. Body: The loop will execute the body (console.log statement) 5 times with i taking values from 0 to 4. 
+    - infinite loop
+        - for (let i = 0; i < 5; i--) { }; // this will create an infinite loop as i will always be less than 5
+        - avoid such condition a
+        - correction can be: for (let i = 5; i > 0; i--) { };// counting down from 5 to 1 this is a valid loop
+    - for of loop: loop over array
+        - example:
+                let testcaseNames = ["login test", "signup test", "logout test", 'search test'];
+                for (let testName of testcaseNames) { // for...of loop to iterate over array elements directly
+                console.log(`Executing Test Case: ${testName}`);
+                }
+        - same as for each in java.
+        - more readable when we are fixed to iterate over array prefer  for of over traditional for or while loops.
+        - cleaner way that traditional for loop
+    - for each loop: loop over array will be covered later
+    - nested for loop is allowed
+        - example:
+        -   for tests from testsuits
+            for browser in broswers
+             execute tests
+    - mitakes to avoid:
+        - index out of bound
+            - for(i=0; i<= array.length;i++)... <= will try to reach extra element which is not there..
+        - infinte loops to be avoided by crosschecking conditions
+        - for(i=1; i<= array.length;i++).. //miss array[0] first value of the array
+- while loop
+    - condition first 
+    - syntax:
+    -   let count = 1;// initializing the counter
+        while (count <= 5) {// condition to check
+            console.log(`Count is: ${count}`);// using template literals // body of the loop
+            count++; // incrementing the counter
+        }
+    - while loop is preferred when when you are checking a condition and number of iterarion may not be Fixed
+    - example:
+    - We have 10 testcases and1 of it is failing because of timeout, we need to try again and again (3 times).
+    - mitakes to avoid:
+        - don't go into infinite loop
+        - verify counter and condition
+        - verify breaks
+    - do while vs while
+        - do while attempts first anyways so it runs first try always
+    - infinite loop example: modems continouesly running and requesting data
 
-- Falsy: `""` (empty string), `0`, `null`, `undefined`, `NaN`, `false`
-- Truthy: non-zero numbers, non-empty strings, objects, arrays
 
-Practical examples / assignments
 
-- Grading system
-- Email validation
-- Username & password validation
-
-Switch case
-
-- Use `switch` for multiple discrete values; include `break` to prevent fall-through.
-
-For loop
-
-- (Add example snippets here as practice.)
+        
 
 
 
