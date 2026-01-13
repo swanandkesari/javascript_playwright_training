@@ -47,6 +47,34 @@
         - do while
         - mistakes to avoid
 10. CH3 array
+    - length property
+    - indexing
+    - methods
+        - push, pop
+        - unshift, shift
+        - indexof
+        - slice
+            - 3 ways
+        - splice
+        - concat
+    - arrow methods
+        - filter
+        - find
+        - every
+        - some
+        - map
+        - reduce
+        - forEach
+11. CH4 Sets and Maps 
+    - recursion
+    - set
+        - Methods:
+    - Map
+        - methods: 
+        - 
+12. CH5 Objects
+    
+
 
 
 # Notes and key definitions
@@ -254,6 +282,64 @@
     - do while vs while
         - do while attempts first anyways so it runs first try always
     - infinite loop example: modems continouesly running and requesting data
+
+#  Arrays
+- collection of objects
+- indexing start from 0
+- syntax:
+    - let testcaseNames = ["login test", "signup test", "logout test", 'search test'];
+      let testScores = [85, 90, 78, 88];
+    - Start with  [ ends with ]
+    - elements are separated by comma.
+- elements can be accesed using index
+    - to get last element: testScores[testScores.length - 1] : <array name>[array length - 1]
+    - to get any element at 2nd position as indexing start with 0: testScores[2]
+    -  length property is useful to get last elements or add element at last
+    -  console.log(`Accessing out of bounds index: ${testcaseNames[10]}`); // prints undefined if `testcaseNames.length` < 10
+-  arrays of different data types is allowed:
+    -   let mixedArray = ["test1", 100, true, null, undefined, { name: "testObject" }, [1, 2, 3]];
+        console.log(`Mixed Array Elements: ${mixedArray}`);
+- To avoid gaps in array
+    -  let testResults = ["PASSED", "FAILED", "PASSED"];
+    -  testResults[5] = "SKIPPED"; // will introduce gaps in array
+    - inbetween values will be undefined
+    -  testResults[testResults.length] = "SKIPPED"; // a good solution
+- Methods
+    - testResults.`push`("PASS"); // add PASS at the last of array // doesnot return any value
+    - let RemovedElement= testResults.`pop()`; // remove last element and return it
+    - testResults.`unshift`("PASS")// add PASS at the first position or index 0 and shift array elements forward
+    - let RemovedElement= testResults.`shift()`; // remove first element and return it
+    - let returnValue = testResults.indexOf("PASSED") // return first index on which element is found.
+
+    -`Slice`
+    - let subset = allTests.`slice(1, 3)`// create a new array from 2nd element till 3rd element. element at index 3 is not included.
+    - allTests.`slice(2)`; //Start from index position 2 till the end. 
+    - allTests.`slice(-2)`; //Start from end till last two elements.
+    - let copy = allTests.slice(); //deep copy
+    - let copy1 = allTests; //shallow copy ->  change in all Tests will also reflect in copy1 as both points to same reference.
+    
+    - `splice`
+    - let removedElements = allTests.`splice(2, 2)`;//First parameter starting index position, second parameter is how many elements
+    - allTests.splice(1, 0, "Add To Cart", "Remove From Cart"); //don't remove but add elements from 3rd parameter at index of first prameter
+    - allTests.splice(2, 2, "Google Search")// remove 2 paerameter and add only one parameter
+
+   - results.includes("FAILED"):  retunrs true if results array includes "Failed" element.
+
+- arrow functions
+  - filter
+  - find
+  - every
+  - some
+  - map
+  - reduce
+  - forEach
+  - check example in js file for better understanding
+
+
+
+
+
+
 
 
 
