@@ -26,7 +26,9 @@ function findMax(arr) {
     if (arr.length === 1) {
         return arr[0];
     } else {
-        let max = findMax(arr.slice(1)); // slice will
+        let max = findMax(arr.slice(1)); // slice will provide array from next element till last.
+        // From last value we start comparing with last and second last then keep max in the max value and come out one by one.
+        //This type of code usually avoided as it is not readable
         console.log(`Current Max ${max} and array: ${arr.slice(1)}`)
         return arr[0] > max ? arr[0] : max;
     }

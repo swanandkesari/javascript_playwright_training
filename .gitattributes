@@ -1,0 +1,4 @@
+# This rule tells Git to automatically detect text files and ensure
+# they use Windows-style CRLF line endings in the working directory
+# and Unix-style LF line endings in the repository.
+* text=auto

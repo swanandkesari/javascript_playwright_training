@@ -205,9 +205,9 @@
             - To use variables inside template literals use ${variableName}
             - Template literals are preferable over concatenation for better readability
         - String default methods:
-            - toUpperCase(),
-            - toLowerCase(),
-            - slice()
+            - toUpperCase(), // convert to uppercase
+            - toLowerCase(),// convert to lowercase
+            - slice() // get subgroup ->  array method applied to string as all strings are array
             - not frequently used:
                 - trim(),
                 - trimStart(),
@@ -334,6 +334,80 @@
   - reduce
   - forEach
   - check example in js file for better understanding
+
+
+# Chapter Set Maps and Recursion
+- Recursion:
+    - function can be called inside the same function
+    - example:
+        - factorial, find max in array, 
+    - exit function: very important to stop the loop to comeout of recursion.
+- Set:
+    - collection of unique values
+    - Syntax:
+        - let uniqueStatus = new Set(testStatuses)// testStatuses has mutliple duplicate values
+    - Methods:
+        - size :same as array length returns number of element set contains.
+        - add: add new element to set. new element gets added only if it is not present earlier otherwise the line is ignored.
+        - delete: remove element from set
+        - has: returns true if set contains that element.
+    -let uniqueArray = `Array.from`(uniqueStatus)//  creates Array from set
+    -TestDomain example;
+        - executed tests
+            - we execute many test suites if some tests are present in multiple test suites we can create a set of tests
+            - to ensure that we run the test only once.
+- Maps
+    - collection of key value pairs
+    - Syntax:
+        - let testResults = new Map()
+        -  testResults.set("Login", "Passed") // key, Value
+        - testResults.set("Logout", "Failed")
+    - set method is used to add a key value pair to map
+    - get method is used to get value from key
+        - testResults.get("Login")
+    - size: same as Set provides number of key value pairs.
+    - In object key is only string but in map key can be integer
+    - Map is derrived or extend from object
+    - methods:
+        - set, get , size: already explained
+        - has, add, delete, clear: same as set
+        - foreach
+    - can initialize with multiple elements too
+    -console.log(`broswerMap : ${JSON.stringify([...browserMap])}`) // check `${JSON.stringify([...<mapName>])}`
+
+
+# Chapter Objects
+- Objects
+    - collection of key value pairs 
+    - Syntax:
+        - let testCase = {
+            name: "Login Test",
+            result: "PASSED",
+            duration: 2.5
+            };
+            console.log(`initiated testCase: ${JSON.stringify(testCase)}`) // check syntax: `${JSON.stringify(testCase)}`
+            console.log(testCase.duration); //accessing member
+            console.log(testCase["duration"]); // another way of accessing member can be used by creating variable
+
+    - Class vs object
+        - Class is a blue print, creation of class won't impact anything in the memory
+        - we need object as instance of class.
+        - where as object data type is representing similar object directly.
+        - the object can have members and methods too.
+
+    - methods
+        - `in` : ("name" `in` testCase) returns true
+        - we can add new methods to object
+        - example:
+            let testCase = {
+                name: "Login Test",// no need of `let` keyword
+                run: function{// method: function inside an object: old way
+                console.log("Running test suite: " + this.name);// use `this` keyword for calling properties of object
+                }
+                report() {} // new way: no need to mention function: short hand method new way starts from ES6
+                };
+            testCase.run();
+            testCase.report();// both works so new way is preferred.
 
 
 

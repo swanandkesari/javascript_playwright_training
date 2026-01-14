@@ -7,6 +7,8 @@ uniqueStatus.add("Blocked")
 console.log(uniqueStatus.size) // 4
 console.log(uniqueStatus)
 uniqueStatus.delete("Blocked")
+isFailedPresent = uniqueStatus.has("Failed")
+console.log(isFailedPresent)
 
 let uniqueArray = Array.from(uniqueStatus)
 console.log(`array froim set ${uniqueArray}`)
@@ -41,7 +43,7 @@ let testResults = new Map();
 testResults.set("Login", "Passed") // key, Value
 testResults.set("Logout", "Failed")
 
-// in object key is only string but in map key can be integer
+// In object key is only string but in map key can be integer
 console.log(testResults.get("Login"))
 console.log(testResults)
 console.log(testResults.size)
@@ -56,3 +58,8 @@ let browserMap = new Map([
     ["Edge", "Edge browser"]
 ])
 console.log(browserMap)
+console.log(`broswerMap : ${typeof browserMap}`)
+console.log(`broswerMap : ${JSON.stringify([...browserMap])}`)
+console.log(browserMap.has("Chrome"))
+console.log("Chrome" in browserMap) // in operator should not be used with Maps 
+console.log(["Chrome", "Chrome broswers"] in browserMap) // 
