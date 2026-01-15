@@ -83,9 +83,12 @@
     - GitHub: hosting/service for repositories, issues, PRs, reviews, and CI integrations.
     - IDE: Interactive Development Environment: more than text editor. we are using VS code as IDE.
 
-    - Hoisting will move all defintion at the top. This allows to call function anywhere even before defining.
-    - Default parameter of function: if teh default value of teh input parameter of the function is provided it is called as default parameter.
-    - iterate: for a set of values we iterate meaning we use each value to do same operation one at a time using some sequence and loop.
+    - `Hoisting` will move all defintion at the top. This allows to call function anywhere even before defining.
+    - `Default parameter` of function: if teh default value of teh input parameter of the function is provided it is called as default parameter.
+    - `iterate`: for a set of values we iterate meaning we use each value to do same operation one at a time using some sequence and loop.
+    - `inheritance`: 
+    - `Shadowing`: overriding the property of parent. it is applicable for both property as well as methods.
+
     
 
 # Quotes and learning statements
@@ -408,6 +411,120 @@
                 };
             testCase.run();
             testCase.report();// both works so new way is preferred.
+            - Short hand method is used only when method is defined inside object {}
+            - we can define properties and methods of the object outside object definition
+            - example:
+                let testCase = {name: "Login Test",}
+                testCase.duration = 2.5; // duration defined outside object definition
+                testCase.run() function: {}// syntax to define function outside object definition
+    - inheritance:
+        - `Inheritance` in object-oriented programming (OOP) is a fundamental concept that allows a new class (subclass) to inherit properties and methods from an existing class (superclass).
+        - for `Objects` in Java scripts also support inheritance. The objects created using parent object inherit all methods and properties of parent object.
+        - all methods and properties can be used in other objects using inheritance to help DRY.
+        - Create method is used to create a Object (Child) from another Object (parent).
+        - All objects inheritted from `Object.prototype`
+        - example: `toString` method from prototype can be used for all objects
+        - example:
+            - let loginTest = Object.create(testCase);
+            - loginTest.name = "Login Test"; //create property outside creation of object allowed.
+            - name is already a property in testCase and it is redefined.
+            - this is called as shadowing: orverriding the property of parent 
+            - `Shadowing` is applicable for both property as well as methods
+        - methods:
+            - hasOwnProperty(<PorpertyName>) returns true if property of the given name is part of object
+            - inherited property will return false unless it is shadowed/ overriden in the object
+            - `in` operator returns true for both inherited as well as own property 
+                - example: console.log("  'name' in smokeTest:", "name" in testCase);
+            - use of in to have for loop for in
+            - example:
+                for (let key in testCase) {}
+        - `Object.assign` method:
+        - example:
+            let logoutTest = Object.assign(Object.create(testTemplate), {
+                name: "Logout Test",
+                priority: "High",
+                logger() {
+                    console.log("logger function called");
+                }
+                });
+    - Constructor function
+        - naming convention: Pascale case
+        - all properties start with `this` keyword
+        - `this` represents object.
+        - The way to attach methods to constructor is to use <constructor Name>.prototype.<function name> = <function>;
+        - This (constructor function) is not an object but it is defining the way object can be constructed. blue print.
+            - This is not creating anything in the memory as object is not instantiated yet.
+        - example:
+            - function TestCase(name, expectedDuration) {
+                        this.name = name;
+                        this.expectedDuration = expectedDuration;
+                        this.status = "PENDING";
+                        this.actualDuration = 0;
+                        this.startTime = null;
+                        }
+            - TestCase.prototype.start = function () {
+                console.log(`  Starting: ${this.name}`);
+                this.status = "RUNNING";
+                this.startTime = Date.now();
+                };
+        - Instance of the Constructor function <TestCase> can be created using new keyword.
+            let test1 = new TestCase("Login Test", 2.5); 
+        - When you use new
+            1. A new object is created. Empty object {}
+            2. sets prototype to <TestCase>.prototype
+            3. Calls TestCase() function with 'this' = new Object
+            4. memory is utilized.
+        - another object will use different memory with the same constructor function.
+        - this is exactly same as class. just a old way.
+# Chapter OOPs Classes
+- OOPs: Object Oriented Programming System
+- Classes 
+    - Class is a design or a blue print for multiple objects to be creating using the same.
+    - Defining a class do nothing in memory
+    - class gets executed only when object of class is created
+    - constructor is used to initialize the state of the object. Same as constructor function of objects
+    - methods defined inside the class or for the class are called instance methods
+    - new keyword is used to instantiate object which will call constrctor of the class.
+        - example:
+            let uiTest = new Test("UI Test", "HIGH") // test class is defined earlier.
+    - why?
+        - example1: 
+            - let's assume we have a programm having 50 methods 43 Variables -Project -- 30 JS javascript files
+             example let's say project of HRMS system:
+            - methods can be: getEmpName(), salary, address, role, ChangeName(), addEmp(), promoteEmp(),.
+            - in OOPS we collect related things inside a class and classes represent real world entities
+            - HRMS: EMployee, Manager, Departement..
+            -  All information, methods and parameter related to employee will be in Employee class.
+            - Manager: derrived from Employee plus they have methods only managers can do,.
+            - so all 50 methods 43 variables are all covered in the class clusters ..
+            -  in Oops we give a structure to prgramms in terms of classes we think in terms of classes mapping to real world objects
+            - If employee has access to change salary- is it good? -not a good system
+            - hence we need encapsulation: private/ protected properties
+        - example 2:
+            - web application has 10 pages
+            - create 10 classes representing the pages
+            - each class contains the operations that I can performs
+            - there can be common objects in some pages
+            - each page will have a url
+            - base page
+            - url
+            - wait to lo            - 
+            - login page extend base page
+            - dashboard page extend base page..
+    - override method: overriding is allowed in js for class. Shadowing
+    - method overloading is not allowed in javascript and python
+    - encapsulation:
+        - private properties
+        - to make properties private they are started with `#`
+        
+
+
+
+
+# Chapter Promises
+
+
+            
 
 
 

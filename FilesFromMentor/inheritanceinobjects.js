@@ -1,11 +1,11 @@
 let testTemplate = {
     status: "PENDING",
     framework: "Playwright",
-    run: function() {
+    run: function () {
         console.log(`  Running ${this.name}...`);
         this.status = "RUNNING";
     },
-    report: function() {
+    report: function () {
         console.log(`  Test: ${this.name} - Status: ${this.status}`);
     }
 };
