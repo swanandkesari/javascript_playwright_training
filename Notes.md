@@ -596,10 +596,112 @@
             - because one object change it will imapct the same for all objects.
                 - two testers testing different tests.. one testcase expect 1 value and other tester change the value it will break the test.
         - static methods are good if we are not using any object instances this will save memory.
+
+# Chapter Module
+- Modules
+    - why?
+        - We may have 50+ methods 10+ classes inour project
+        - In such scenarios we need to define them in different Js files for better readability and maintainablity
+        - To support importing function or class from one file to other file we need Module concept.
+        - with module we can export intended classes and method from file
+        - import the classes those are required in the current file from other file
+    - Each java script file can be considerred as Module
+    - Two prerequisite to use the class from other files as module
+        1. In file where class is defined, it should export the class
+            module.exports = <ClassName>; // traditional way
+            export default <ClassName>; //ES6 way
+        2. In the file where we want to use the class we should import it
+            const <ClassName> = require ('Path of .js file'); // traditional way
+            import <ClassName> from 'Path of .js file' //ES6 way
+    - we cannot export a few methods from class, we have to export entire class
+    - We can export a few functions written in file and import some of them
+        - in such scenario we export with {<fun1>,<fun2>,..}  and import with import {<fun1>} from `path`
+    - If there is a name conflict we can rename functions
+        import {<fun1> as fun1_exp}
+
+# Chapter Error Handling
+- why?
+    - for unexpected behaviour we need to record it
+    - If we don't want to stop our flow of execution we can handle error behaviour properly and continue.
+    - user should get a way to understand what went wrong or better way to use the function or app
+    - Banking example:
+        - If we add amount to sent in an app then submit OTP and app crashed. what we do?
+            - we first verify if amount is deducted
+                - if deducted
+                        verify if amount is recived
+                            - if recived
+                                - no worries
+                            - else
+                                - raise complaint
+                - else
+                    - confirm from bank:  raise concern
+                    - once confirmed we can restart sending.
+        - here raising complaint is like throwing an error
+        - what if system had thrown relavnt error instead of crash?
+            - user get's better idea.
+    
+- try catch finally
+    - error handling is done with the help of try catch finally
+    - try block is the block of code where we expect some errors
+    - add condition if error occurs throw error
+    - after the try block we write catch block to catch the error and handle it.
+    - if error is unknown we can throw it to block continuing the code
+    - finaly is the safety net which will be executed even if the error is thrown and not catched properly.
+        - example:
+            - closing browser in Auto tests
+            - logging out for security perpose
+    - syntax:
+        try{
+            condition{
+                throw error('message', option) 
+            }
+        }
+        Catch(err){
+            log("message:" err.message)
+            throw err to stop going further...
+        }
+        finally
+        {
+            safe code to be executed after error handling
+        }
+        //program continues..
+
+- error stack:
+    - stack is a property of error
+    - stack is an array of calls of functions that led to the error.
+    - it stores all lines of method calls that led to the error in sequence.
+     - console.log("  Value (first line):", error.stack.split('\n')[0]); 
+        - the above code is a sample where only first line of stack is returned this is normally used over detailed call stack.
+        - example: console.log("  Entire stackTrace", error.stack.split('\n'))
+            - using split will help to get stacks properly written as one in one line for better readability
+- 
         
-# Chapter Promises
+- Error types:
+    - Main parent is Error
+    -  TypeError, ReferenceError, SyntaxError, RangeError, EvalError, URIError
+    - TypeError:  type of property not matching
+    - ReferenceError: property not found..
+    - SyntaxError: some bracket is missing.. or similar issue
+    - RangeError: for loop.. range out of bound.. trying to access memory which is not in array.
+    - EvalError: 
+    - URIError: related to web url
+    - All type can be caught as catch(error){} // now as we don't require type specification while using variable this is possible.
+-Switch on error:
+    - design pattern used to better error handling in javascript.
+    - cause attribute or a variable is used in this.
+    - example:
+        try {   
+            throw Error("message")
+        }
+        catch(err)
+        {
+            switch(err.cause)
+            {   
 
+                    
+        }
 
+- Custom Errors:
 
 
 
