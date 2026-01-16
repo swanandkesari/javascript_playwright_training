@@ -60,10 +60,10 @@ class TestBuilder {
 let testConfig = new TestBuilder();
 
 testConfig.name("Login Test")
-    .browser("chromium")
-    .toLowerCase()
-    .toUpperCase()
-    .toLowerCase()
+    //.browser("chromium") //method doesnot return this.. hence should not be included in the chain,
+    //.toLowerCase()
+    //.toUpperCase()
+    //.toLowerCase()
     .timeout(5000)
     .retries(2)
     .tag("smoke")
@@ -93,4 +93,4 @@ testConfig.name("Login Test")
 //   await page.getByRole('link', { name: 'Get started' }).click();
 //     await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 
-let test1 = new TestRunner("Login Test");
+//let test1 = new TestRunner("Login Test");

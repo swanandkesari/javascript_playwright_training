@@ -38,6 +38,7 @@ class UITest extends BaseTest {
 
     navigate() {
         console.log(`    Navigating to: ${this.url}`);
+        this.browser = "Firefox"
         this.changeBrowser("Firefox"); // Change private field
     }
 
@@ -162,7 +163,7 @@ class LoginPage extends BasePage {
         // await this.page.fill(this.passwordInput, password);
         // await this.page.click(this.loginButton);
     }
-getErrorMessage() {
+    getErrorMessage() {
         console.log(`  Getting error from ${this.errorMessage}`);
         return "Invalid credentials";
         // In real Playwright:

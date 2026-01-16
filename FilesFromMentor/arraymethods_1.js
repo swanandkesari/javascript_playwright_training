@@ -1,4 +1,4 @@
-/*let testResults = ["PASSED", "FAILED", "SKIPPED", "PASSED", "FAILED"]
+let testResults = ["PASSED", "FAILED", "SKIPPED", "PASSED", "FAILED"]
 console.log(testResults[0]);
 testResults[0] = "SKIPPED";
 console.log(testResults[0]);
@@ -40,7 +40,8 @@ if (testResult.includes("FAILED")) {
 else {
     console.log("All tests passed")
 }
-    */
+
+//slice
 let allTests = ["Login", "Logout", "Search", "Signup", "Checkout"];
 console.log(`Original Array: ${allTests}`);
 let subset = allTests.slice(1, 3);// 1,2 .. all<3

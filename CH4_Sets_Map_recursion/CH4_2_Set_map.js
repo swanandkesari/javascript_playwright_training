@@ -2,6 +2,7 @@
 let testStatuses = ["Passed", "Failed", "Skipped", "Passed", "Failed"]
 let uniqueStatus = new Set(testStatuses)
 console.log(uniqueStatus)   // {"Passed", Failed, "Skipped"}
+console.log(`set of unique values: ${JSON.stringify([...uniqueStatus])}`)  // {"Passed", Failed, "Skipped"}//spread operator
 console.log(uniqueStatus.size) // 3
 uniqueStatus.add("Blocked")
 console.log(uniqueStatus.size) // 4

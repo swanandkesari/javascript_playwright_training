@@ -98,6 +98,7 @@
 - If you need to copy-paste code, something is wrong — it will be harder to maintain.
 - Writing a program is communication.
 - Use functions to follow the DRY (Don't Repeat Yourself) principle.
+- Always prefer composition over inheritance
 
 # Random notes during class
 - notes dump
@@ -278,7 +279,7 @@
     - while loop is preferred when when you are checking a condition and number of iterarion may not be Fixed
     - example:
     - We have 10 testcases and1 of it is failing because of timeout, we need to try again and again (3 times).
-    - mitakes to avoid:
+    - * mitakes to avoid :
         - don't go into infinite loop
         - verify counter and condition
         - verify breaks
@@ -515,8 +516,93 @@
     - method overloading is not allowed in javascript and python
     - encapsulation:
         - private properties
-        - to make properties private they are started with `#`
+        - To make properties private they are started with `#`
+        - Private properties are not accesible to child class as well.
+        - To change private property from parent method in child class is not allowed.
+        - However, you can have a method in parent class which can access and modify the private property.
+        - The same method can be used by child class.
+        - This way the property is under parental control ;)
+    - `super` key word is used for using parent method.
+        - use cases:
+            - constructor: use super for parent constructor or parent properties
+                - continue for child properties after it.
+            - while overriding parent method
+            - example:
+                class APITest extends BaseTest {
+                    constructor(name, endpoint, method = "GET") {
+                        super(name); // call parent constructor
+                        this.endpoint = endpoint;
+                        this.method = method;
+                        this.responseTime = 0;
+                    }
+                    // other methods
+                    // Override parent method
+                    start() {
+                        super.start();  // Call parent start() super.<methodname>
+                        this.navigate();  // Add child behavior
+                    }
+                }
+    -  `instanceof` operator.
+        - myTest instanceof UITest // returns true or false
+    - <Quote>: Always prefer composition over inheritance
+    - method chaining
+        - builder design pattern
+            - write all methods returning `this`
+            - example: 
+                class TestCase {
+                    constructor(name) {
+                       this.name = name;
+                    }
+                    method1() { perform operation; return this; }
+                    method2() { perform operation; return this; }
+                    method3() { perform operation; return this; }
+                    build() { log something; return object/ boolean;}
+                }
+                let test1 = new TestCase();
+                test1.method1().method2().method3().build();
+    - getter and setter
+        - special methods in java script
+        - to use getter seeter we name porperties initialized with _
+        - example:
+            class TestCase {
+                constructor(name) {
+                    this._name = name;
+                }
+                get name() {
+                    return this._name;
+                }
+                set name(value) {
+                    this._name = value;
+                }
+            }
+            test1= new TestCase("test1")
+            consol.log (test1.name) // no need to use get just .name is smart to call getter method.
+            test1.name = "newName" // this calls setter. so we use methods as if we are accessing properties.
+            console.log (test1.name)
+        - in getter setter we can add additional logic such as unit conversion or wrappers or logging.
+    - Static method
+        - static variables are common for all clas objects
+        - example:
+            - class has 5 instance variables or properties and 100 instance objects
+                -  100*5 =500 instance variables created
+            - class has 5 `static` variables or properties and 100 instance objects
+                - 5 static variable created
+            - static variables are bound to class and not to objects
+        - static variables are called with classname.static variable name
+        - static methods can use static variables
+        - normal methods can also use static variables
+        - static methods cannot call or use instance variables.
+        - static variables should be avoided.
+            - because one object change it will imapct the same for all objects.
+                - two testers testing different tests.. one testcase expect 1 value and other tester change the value it will break the test.
+        - static methods are good if we are not using any object instances this will save memory.
         
+# Chapter Promises
+
+
+
+
+
 
 
 

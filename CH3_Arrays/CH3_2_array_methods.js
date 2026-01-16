@@ -29,7 +29,7 @@ let removedElement = testResults.pop();
 // } else {
 //     console.log("✓ No failures detected");
 // }
-/*
+
 let allTests = ["Login", "Logout", "Search", "Checkout", "Payment"];
 
 let subset = allTests.slice(1, 3);
@@ -84,4 +84,3 @@ for (let i = 0; i < testEmails.length; i++) {
     console.log("  Expected: " + (isValid ? "VALID" : "INVALID"));
     console.log();
 }
-    */

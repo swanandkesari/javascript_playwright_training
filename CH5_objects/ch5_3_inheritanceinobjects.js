@@ -56,6 +56,7 @@ let suiteTemplate = {
 let smokeTest = Object.create(suiteTemplate);
 smokeTest.name = "Smoke Test Suite";
 smokeTest.testCount = 25;
+
 // use `in` instead of hasOwnProperty differnce is 
 // `in` operator returns true for both inherited as well as own property 
 console.log("  'name' in smokeTest:", "name" in smokeTest);
@@ -72,10 +73,12 @@ for (let key in smokeTest) {
     }
 }
 console.log(lineseparetor);
+
 // Create object using assign method
 console.log(lineseparetor);
 console.log("Create object using assign method");
 console.log(lineseparetor);
+
 let logoutTest = Object.assign(Object.create(testTemplate), {
     name: "Logout Test",
     priority: "High",
